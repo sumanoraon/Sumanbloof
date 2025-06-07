@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suman Blood - Daily Blog</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e0e0e0;
+      color: #333;
+      padding: 0 20px;
+    }
+    header {
+      background-color: #444;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 0 0 10px 10px;
+    }
+    h1 {
+      margin: 0;
+    }
+    section {
+      margin-top: 20px;
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .blog-entry {
+      border-top: 1px solid #ccc;
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #aaa;
+      resize: vertical;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome Everyone to Suman Blood</h1>
+    <p>Your daily dose of thoughts, ideas, and life</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>
+      Hi, I'm Suman. I'm a student currently following the CBSE curriculum and preparing for Class 12. 
+      I’ve explored many things from JEE prep to blogging, and I dream of becoming a full-time traveler one day. 
+      I want to grow strong, become financially independent, and travel the world instead of being stuck in a daily office job.
+    </p>
+  </section>
+
+  <section class="blog">
+    <h2>Write a Blog Post</h2>
+    <textarea id="blogInput" placeholder="Write your blog here..."></textarea>
+    <button onclick="postBlog()">Post Blog</button>
+  </section>
+
+  <section class="blog">
+    <h2>My Blog</h2>
+    <div id="blogContainer">
+      <p><strong>📝 7 June 2025:</strong> This is my first blog post! I'm starting this journey of blogging to share my experiences, thoughts, and what I learn every day. Stay connected!</p>
+    </div>
+  </section>
+
+  <script>
+    function postBlog() {
+      const input = document.getElementById("blogInput");
+      const blogContainer = document.getElementById("blogContainer");
+
+      const newPost = document.createElement("div");
+      newPost.className = "blog-entry";
+      const date = new Date().toLocaleDateString();
+
+      newPost.innerHTML = `<p><strong>📝 ${date}:</strong> ${input.value}</p>`;
+      blogContainer.prepend(newPost);
+
+      input.value = ""; // clear textarea
+    }
+  </script>
+
+</body>
+</html>
